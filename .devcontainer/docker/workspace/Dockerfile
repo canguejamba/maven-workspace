@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/devcontainers/java:1-17-bullseye
+ARG VARIANT="buster"
+FROM mcr.microsoft.com/vscode/devcontainers/java:1-17-${VARIANT}
 
 ARG PKG="git vim curl unzip zip sudo"
 
@@ -7,6 +8,7 @@ RUN apt-get update \
 
 ARG INSTALL_MAVEN="true"
 ARG MAVEN_VERSION=""
+
 
 ARG INSTALL_GRADLE="false"
 ARG GRADLE_VERSION=""
@@ -17,8 +19,8 @@ RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/
 # Set the working directory
 
 # enable git
-RUN su ${USERNAME} --command \
-    'sudo git config --system --add safe.directory "/home/${USERNAME}/workspace"'
+RUN su vscode --command \
+    'sudo git config --system --add safe.directory "/home/vscode/workspace"'
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

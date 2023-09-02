@@ -4,7 +4,7 @@
 	"name": "workspace",
 	"dockerComposeFile": ["docker-compose.yml"],
 	"service": "workspace",
-	"workspaceFolder": "/home/cganda/workspace",	
+	"workspaceFolder": "/home/vscode/workspace",	
 	"overrideCommand": true,
 	"remoteUser": "vscode",
 	"postCreateCommand": "java -version",
@@ -26,16 +26,7 @@
 						"source.organizeImports": true
 					}
 				},
-				"terminal.integrated.defaultProfile.windows": "PowerShell",
-				"terminal.integrated.profiles.windows": {
-				  "PowerShell": {
-					"source": "PowerShell",
-					"icon": "terminal-powershell",
-					"args": [
-					  "-nologo"
-					]
-				  }
-				},
+
 				"explorer.copyRelativePathSeparator": "/",
 
 				//################
